@@ -1,6 +1,8 @@
 package com.certificacion.automatizacion.wappi.stepdefinitions;
 
+import com.certificacion.automatizacion.wappi.models.DatosLogin;
 import com.certificacion.automatizacion.wappi.tasks.AbrirNavegador;
+import com.certificacion.automatizacion.wappi.tasks.IngresarDatosLogin;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -10,6 +12,8 @@ import net.serenitybdd.screenplay.actors.Cast;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.thucydides.core.annotations.Managed;
 import org.openqa.selenium.WebDriver;
+
+import java.util.List;
 
 import static net.serenitybdd.screenplay.actors.OnStage.setTheStage;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
@@ -32,10 +36,9 @@ public class LoginStepDefinition {
 
     }
 
-
     @When("^el ingresa las credenciales para ingresar$")
-    public void elIngresaLasCredencialesParaIngresar() {
-
+    public void elIngresaLasCredencialesParaIngresar(List<DatosLogin> datosLogin) {
+        OnStage.theActorInTheSpotlight().attemptsTo(IngresarDatosLogin.conDatos(datosLogin.get(0)));
     }
 
     @Then("^el usuario debe ver el nombre Welcome, pruebas!$")

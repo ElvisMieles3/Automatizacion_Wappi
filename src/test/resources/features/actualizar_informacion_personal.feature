@@ -5,9 +5,9 @@ Característica: Prueba de registrar una experiencia laboral
 
   Antecedentes: Inicio sesión
     Dado que Elvis esta en el portal
-    Cuando el ingresa las credenciales para ingresaru
+    Cuando el ingresa las credenciales para ingresar
       | usuario         | contrasena   |
-      | usuarioLinkedin | usuario*2020 |
+      | usuarioLinkedin | Usuario*2019 |
 
   Escenario: El usuario Elvis desea actualizar lo informaciòn personal
     Dado que el usuario se encuentra en la pantalla de Información Personal y digita los datos

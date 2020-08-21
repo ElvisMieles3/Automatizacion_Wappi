@@ -27,6 +27,7 @@ public class IngresarDatosLogin implements Task {
     }
 
     public static IngresarDatosLogin conDatos( DatosLogin datosLogin){
+
         return new IngresarDatosLogin(datosLogin);
     }
 }

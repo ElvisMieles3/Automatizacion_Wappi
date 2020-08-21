@@ -5,9 +5,12 @@ import org.openqa.selenium.By;
 public class LoginUserInterface {
 
 
+
+
     public static final Target DIGITA_EL_USUARIO = Target.
             the("Digita el usuario")
             .located(By.id("username"));
+
 
     public static final Target DIGITA_CONTRASENA = Target.
             the("Digita la contraseña")

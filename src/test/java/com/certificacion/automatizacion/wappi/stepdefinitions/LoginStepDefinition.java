@@ -1,6 +1,7 @@
 package com.certificacion.automatizacion.wappi.stepdefinitions;
 
 import com.certificacion.automatizacion.wappi.models.DatosLogin;
+import com.certificacion.automatizacion.wappi.questions.Login;
 import com.certificacion.automatizacion.wappi.tasks.AbrirNavegador;
 import com.certificacion.automatizacion.wappi.tasks.IngresarDatosLogin;
 import cucumber.api.java.Before;
@@ -15,8 +16,8 @@ import org.openqa.selenium.WebDriver;
 
 import java.util.List;
 
-import static net.serenitybdd.screenplay.actors.OnStage.setTheStage;
-import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
+import static net.serenitybdd.screenplay.actors.OnStage.*;
 
 public class LoginStepDefinition {
 
@@ -41,9 +42,10 @@ public class LoginStepDefinition {
         OnStage.theActorInTheSpotlight().attemptsTo(IngresarDatosLogin.conDatos(datosLogin.get(0)));
     }
 
-    @Then("^el usuario debe ver el nombre Welcome, pruebas!$")
-    public void elUsuarioDebeVerElNombreWelcomePruebas() {
-
+    @Then("^el usuario debe ver el mensaje (.*)$")
+    public void elUsuarioDebeVerElNombreWelcomePruebas(String login) {
+        theActorInTheSpotlight().should(seeThat(Login.mensaje(),
+                org.hamcrest.Matchers.is(login)));
     }
 
 }

@@ -1,7 +1,7 @@
 #language: es
-Característica: Prueba de registrar una experiencia laboral
+Característica: Registrar los datos personales
   Como analista de calidad se desea validar el correcto
-  funcionamiento de agregar una nueva experiencia.
+  funcionamiento de actualizar informaciòn personal.
 
   Antecedentes: Inicio sesión
     Dado que Elvis esta en el portal

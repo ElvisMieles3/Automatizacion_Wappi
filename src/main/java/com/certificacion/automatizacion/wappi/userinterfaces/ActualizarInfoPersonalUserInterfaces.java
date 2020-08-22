@@ -31,10 +31,14 @@ public class ActualizarInfoPersonalUserInterfaces {
 
     public static final Target SELECCIONA_SEXO= Target.
             the("Selecciona el Sexo")
-            .locatedBy("//span[@class='radio-label']//option[.='{0}']");
+            .locatedBy("//span[@class='radio-label']");
 
     public static final Target SELECCIONA_BOTON_GUARDAR= Target.
             the("Digita la fecha de nacimiento del usuario")
             .located(By.id("save-profile"));
+
+    public static final  Target ABRIR_BUSCADOR_IMAGEN = Target.
+            the("Selecciona la imagen que desea cargar").
+            locatedBy("/html/body/app-root/app-profile/div/div/form/app-file-upload/div/div/input");
 
 }

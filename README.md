@@ -22,7 +22,7 @@ Tener un IDEA instalado para la observación o modificación del codigo.
 En la raiz de proyecto debemos tener 3 archivos, los cuales son:
    - serenity.properties
    - sonar-project.properties
-   - chromedriver.exe : Este archivo debe ser copatible con la versiòn que se tenga en la maquina; en este caso  es ChromeDriver 84.0.4147.30
+   - chromedriver.exe : Este archivo debe ser compatible con la versiòn que se tenga en la maquina; en este caso  es ChromeDriver 84.0.4147.30
 
 Ejecutando las pruebas ⚙️
 

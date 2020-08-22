@@ -15,3 +15,4 @@ Característica: Registrar los datos personales
       | Elvis Miguel | Mieles Guarin | 04/03/1996      | Colombia | masculino | C:\Users\Navelis Mieles\Desktop |
 
     Entonces el deberia ver el mensaje Tu información se guardó correctamente
+

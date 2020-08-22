@@ -1,5 +1,5 @@
 #language: es
-Característica: Prueba de solicitar una orden
+Característica: Solicitar una orden
   Como analista de calidad se desea validar y verifica el correcto
   funcionamiento de realizar un pedido con y sin cupòn de bienvenida
 
@@ -11,7 +11,18 @@ Característica: Prueba de solicitar una orden
 
 
   Escenario: El usuario Elvis desea realizar una orden sin cupòn
-    Cuando selecciona el producto
+    Cuando selecciona el producto sin cupon
+      | nombreProducto |
+      | Jamón Premium  |
+    Entonces el deberia ver el siguiente mensaje Tu pedido ha sido confirmado, te mantendremos informado ante nuevas novedades
+    Cuando se encuentra observando
+      | sitio      |
+      | misPedidos |
+    Entonces  debe ver el producto Jamón Premium
+
+
+  Escenario: El usuario Elvis desea realizar una orden usando el cupòn
+    Cuando selecciona el producto con cupon
       | nombreProducto |
       | Jamón Premium  |
     Entonces el deberia ver el siguiente mensaje Tu pedido ha sido confirmado, te mantendremos informado ante nuevas novedades

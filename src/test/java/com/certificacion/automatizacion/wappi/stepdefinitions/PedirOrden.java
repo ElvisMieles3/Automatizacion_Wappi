@@ -7,6 +7,7 @@ import com.certificacion.automatizacion.wappi.questions.Login;
 import com.certificacion.automatizacion.wappi.questions.ObservarMisPedidos;
 import com.certificacion.automatizacion.wappi.tasks.ActualizarDatosPersonal;
 import com.certificacion.automatizacion.wappi.tasks.ObservarMisProductos;
+import com.certificacion.automatizacion.wappi.tasks.PedirOrdenUtilizandoCupon;
 import cucumber.api.java.ast.Cuando;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.es.Dado;
@@ -21,7 +22,7 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 public class PedirOrden {
 
 
-    @Cuando("^selecciona el producto$")
+    @Cuando("^selecciona el producto sin cupon$")
     public void seleccionaElProductoJamónPremium(List<OrdenPedido> ordenPedidos) {
         OnStage.theActorInTheSpotlight().attemptsTo(com.certificacion.automatizacion.wappi.tasks.PedirOrden.
                 conDatos(ordenPedidos.get(0)));
@@ -47,5 +48,12 @@ public class PedirOrden {
     public void debeVerElProductoJamónPremium(String nombreProducto) {
         theActorInTheSpotlight().should(seeThat(ObservarMisPedidos.mensaje(),
                 org.hamcrest.Matchers.is(nombreProducto)));
+    }
+
+    @Cuando("^selecciona el producto con cupon$")
+    public void seleccionaelproductoconcupon(List<OrdenPedido> ordenPedidos) {
+        OnStage.theActorInTheSpotlight().attemptsTo(PedirOrdenUtilizandoCupon.
+                conDatos(ordenPedidos.get(0)));
+
     }
 }

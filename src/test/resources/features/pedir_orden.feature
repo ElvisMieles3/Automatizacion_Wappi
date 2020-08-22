@@ -14,5 +14,8 @@ Característica: Prueba de solicitar una orden
     Cuando selecciona el producto
       | nombreProducto |
       | Jamón Premium  |
-    Entonces el deberia ver el mensaje en la alerta Tu pedido ha sido confirmado, te mantendremos informado ante nuevas novedades
-    Entonces  en la ventana de Mis pedidos debe estar el producto Jamón Premium
+    Entonces el deberia ver el siguiente mensaje Tu pedido ha sido confirmado, te mantendremos informado ante nuevas novedades
+    Cuando se encuentra observando
+      | sitio      |
+      | misPedidos |
+    Entonces  debe ver el producto Jamón Premium

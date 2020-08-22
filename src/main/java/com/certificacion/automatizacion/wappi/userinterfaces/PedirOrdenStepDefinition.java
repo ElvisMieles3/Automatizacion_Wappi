@@ -14,6 +14,6 @@ public class PedirOrdenStepDefinition {
             .located(By.id("order-confirm"));
     public static final Target MENSAJE_RESPUESTA_ORDEN = Target.
             the("Muestra el mensaje de confirmaciòn de producto")
-            .locatedBy("(//div[@class='modal-content'])[3]");
+            .locatedBy("//*[text() = 'Tu pedido ha sido confirmado, te mantendremos informado ante nuevas novedades']");
 
 }

@@ -39,6 +39,6 @@ public class ActualizarInfoPersonalUserInterfaces {
 
     public static final  Target ABRIR_BUSCADOR_IMAGEN = Target.
             the("Selecciona la imagen que desea cargar").
-            locatedBy("/html/body/app-root/app-profile/div/div/form/app-file-upload/div/div/input");
+            locatedBy("//input[@id='image']");
 
 }

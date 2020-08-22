@@ -24,10 +24,9 @@ public class ActualizarDatosPersonal implements Task {
 
         actor.attemptsTo(Click.on(ActualizarInfoPersonalUserInterfaces.INGRESA_INFORMACION_PERSONAL));
 
-
-
-       // actor.attemptsTo(Enter.theValue(datosInfoPersonal.getUrlImagen()).
-         //       into(ActualizarInfoPersonalUserInterfaces.ABRIR_BUSCADOR_IMAGEN));
+       /// actor.attemptsTo(Click.on(ActualizarInfoPersonalUserInterfaces.ABRIR_BUSCADOR_IMAGEN));
+      //actor.attemptsTo(Enter.theValue(datosInfoPersonal.getUrlImagen()).
+        //        into(ActualizarInfoPersonalUserInterfaces.ABRIR_BUSCADOR_IMAGEN));
 
         actor.attemptsTo(Enter.theValue(datosInfoPersonal.getNombre()).
                 into(ActualizarInfoPersonalUserInterfaces.DIGITA_NOMBRE));

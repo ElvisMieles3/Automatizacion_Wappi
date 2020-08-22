@@ -18,6 +18,7 @@ public class ActualizaInformacionPersonalStepDefinition {
     @Dado("^que el usuario se encuentra en la pantalla de Información Personal y digita los datos$")
     public void queElUsuarioSeEncuentraEnLaPantallaDeInformaciónPersonalYDigitaLosDatos(List<DatosInfoPersonal> actualizarInformacionPersonal) {
 
+
         OnStage.theActorInTheSpotlight().attemptsTo(ActualizarDatosPersonal.
                 conDatos(actualizarInformacionPersonal.get(0)));
     }

@@ -2,8 +2,8 @@
 
 Se realizar la automatización de la aplicación Wappi que se encarga del delivery de comidas, por medio de url https://automation-wappi.vercel.app/login. se desea validar y verificar el correcto funcionamiento de las funcionalidades.
 
-1.Actualización de informaciòn dentro del perfil
-2.Pedir una orden con y sin el cupón de bienvenida
+     1.Actualización de informaciòn dentro del perfil
+     2.Pedir una orden con y sin el cupón de bienvenida
 
 
 Comenzando ✒️
@@ -16,11 +16,13 @@ Para la ejecución de este proyecto desdemos tener presente que debemos tener in
 
 JAVA_HOME: Descarga el JDK de Java y adjuntamos la ruta en donde se encuentra la carpeta, en mi caso la tengo en C:\Program Files (x86)\Java\jdk1.8.0_251
 MAVEN_HOME: Descarga el Apache Maven y se adjunta la ruta en donde se encuentre la carpeta, en mi caso la tengo en C:\Program Files\apache-maven-3.6.3-bin\apache-maven-3.6.3
+
 Tener un IDEA instalado para la observación o modificación del codigo.
+
 En la raiz de proyecto debemos tener 3 archivos, los cuales son:
    - serenity.properties
    - sonar-project.properties
-   - chromedriver.exe
+   - chromedriver.exe : Este archivo debe ser copatible con la versiòn que se tenga en la maquina; en este caso  es ChromeDriver 84.0.4147.30
 
 Ejecutando las pruebas ⚙️
 

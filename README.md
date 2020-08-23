@@ -14,8 +14,9 @@ Pre-requisitos 📋
 
 Para la ejecución de este proyecto desdemos tener presente que debemos tener instalado el JDK de java y las variables de entorno, las cuales son:
 
-JAVA_HOME: Descarga el JDK de Java y adjuntamos la ruta en donde se encuentra la carpeta, en mi caso la tengo en C:\Program Files (x86)\Java\jdk1.8.0_251
-MAVEN_HOME: Descarga el Apache Maven y se adjunta la ruta en donde se encuentre la carpeta, en mi caso la tengo en C:\Program Files\apache-maven-3.6.3-bin\apache-maven-3.6.3
+    JAVA_HOME: Descarga el JDK de Java y adjuntamos la ruta en donde se encuentra la carpeta, en mi caso la tengo en C:\Program Files (x86)\Java\jdk1.8.0_251
+
+    MAVEN_HOME: Descarga el Apache Maven y se adjunta la ruta en donde se encuentre la carpeta, en mi caso la tengo en C:\Program Files\apache-maven-3.6.3-bin\apache-maven-3.6.3
 
 Tener un IDEA instalado para la observación o modificación del codigo.
 
@@ -28,7 +29,9 @@ Ejecutando las pruebas ⚙️
 
 Para la ejecución del proyecto debe tener presente que las variables de entornos se encuentre bien configuradas, adicional debe tener las dependencias descargadas la cual se encuentra en el archivo pom.xml.
 
-La prueba se puede ejecutar por medio del package runners, la cual esta ubicada en src\test\java\co\certificacion\automatizacion\runner o por medio de la consola del proyecto con el comando mvn clean verify
+La prueba se puede ejecutar por medio del package runners, la cual esta ubicada en src\test\java\co\certificacion\automatizacion\runner o por medio de la consola del proyecto con el comando 
+       
+       mvn clean verify
 
 Para observar las evidencias de las pruebas debemos ejecutar el script y ingresar a la ruta target\site\serenity , allí buscamos  archivo Index que encontramos en la carpeta.
 
@@ -38,8 +41,22 @@ En la raiz del proyecto debemos de poner el sonar-project.properties, para poder
 
 Los pasos a seguir son:
 
-En el cmd de la carpeta del proyecto ejecutamos el comando starSonar.
-Abrir el cmd y ejecutamos el comando StartSonar
+En el cmd de la carpeta del proyecto ejecutamos el comando. 
+  
+     starSonar
+     
+Abrir el cmd y ejecutamos el comando 
+
+    StartSonar
 Abrir en el navegador la URL http://localhost:9000/about
-En la carpeta del proyecto se procede abrir el cmd y se ejecuta el comando sonar -scanner , en otra ventana del mismo proyecto ejecuto el cmd el comando sonar-scanner
-Ingresar a la URL http://localhost:9000/about para analizar el resultado.
+
+En la carpeta del proyecto se procede abrir el cmd y se ejecuta el comando. 
+
+    sonar -scanner 
+     
+En otra ventana del mismo proyecto ejecuto el cmd el comando 
+
+    sonar-scanner
+Nota: No se debe cerrar las ventanas del cmd  
+  
+Se procede a ingresar a la URL http://localhost:9000/about para analizar el resultado.

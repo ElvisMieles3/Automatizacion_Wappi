@@ -8,6 +8,6 @@ import org.junit.runner.RunWith;
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(features = "src/test/resources/features/login.feature"
         , glue = "com.certificacion.automatizacion.wappi.stepdefinitions"
-        , snippets = SnippetType.CAMELCASE)
+        , snippets = SnippetType.CAMELCASE )
 public class LoginRunner {
 }

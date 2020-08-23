@@ -21,12 +21,11 @@ public class ActualizarDatosPersonal implements Task {
     public <T extends Actor> void performAs(T actor) {
 
 
-
         actor.attemptsTo(Click.on(ActualizarInfoPersonalUserInterfaces.INGRESA_INFORMACION_PERSONAL));
 
-       /// actor.attemptsTo(Click.on(ActualizarInfoPersonalUserInterfaces.ABRIR_BUSCADOR_IMAGEN));
-      //actor.attemptsTo(Enter.theValue(datosInfoPersonal.getUrlImagen()).
-        //        into(ActualizarInfoPersonalUserInterfaces.ABRIR_BUSCADOR_IMAGEN));
+        //actor.attemptsTo(Click.on(ActualizarInfoPersonalUserInterfaces.ABRIR_BUSCADOR_IMAGEN));
+        actor.attemptsTo(Enter.keyValues(datosInfoPersonal.getUrlImagen()).
+                into(ActualizarInfoPersonalUserInterfaces.ABRIR_BUSCADOR_IMAGEN));
 
         actor.attemptsTo(Enter.theValue(datosInfoPersonal.getNombre()).
                 into(ActualizarInfoPersonalUserInterfaces.DIGITA_NOMBRE));

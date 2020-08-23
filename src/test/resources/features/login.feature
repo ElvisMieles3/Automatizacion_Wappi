@@ -38,6 +38,5 @@ Feature: Login
     Examples: Datos
       | usuario     | contrasena | mensaje                                             |
       | ElvisMieles | .          | La contraseña debe contener entre 8 y 14 caracteres |
-      | ElvisMieles |            | La contraseña requerida                             |
 
 

@@ -41,4 +41,8 @@ public class ActualizarInfoPersonalUserInterfaces {
             the("Selecciona la imagen que desea cargar").
             locatedBy("//input[@id='image']");
 
+    public static final  Target MENSAJE_POPUP_ACTUALIZACION = Target.
+            the("Selecciona la imagen que desea cargar").
+            locatedBy("//*[text() = 'Tu información se guardó correctamente']");
+
 }

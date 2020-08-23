@@ -1,6 +1,7 @@
 package com.certificacion.automatizacion.wappi.stepdefinitions;
 
 import com.certificacion.automatizacion.wappi.models.DatosInfoPersonal;
+import com.certificacion.automatizacion.wappi.questions.ActualizarInformacion;
 import com.certificacion.automatizacion.wappi.questions.Login;
 import com.certificacion.automatizacion.wappi.tasks.ActualizarDatosPersonal;
 import cucumber.api.java.es.Dado;
@@ -25,7 +26,7 @@ public class ActualizaInformacionPersonalStepDefinition {
 
     @Entonces("^el deberia ver el mensaje (.*)$")
     public void elDeberiaVerElMensajeTuInformaciónSeGuardóCorrectamente(String mensajeAlerta) {
-        theActorInTheSpotlight().should(seeThat(Login.mensaje(),
+        theActorInTheSpotlight().should(seeThat(ActualizarInformacion.mensaje(),
                 org.hamcrest.Matchers.is(mensajeAlerta)));
 
     }

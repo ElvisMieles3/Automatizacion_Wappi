@@ -12,7 +12,7 @@ Característica: Registrar los datos personales
   Escenario: El usuario Elvis desea actualizar lo informaciòn personal
     Dado que el usuario se encuentra en la pantalla de Información Personal y digita los datos
       | nombre       | apellido      | fechaNacimiento | pais     | sexo      | urlImagen                       |
-      | Elvis Miguel | Mieles Guarin | 04/03/1996      | Colombia | masculino | C:\Users\Navelis Mieles\Desktop |
+      | Elvis Miguel | Mieles Guarin | 04/03/1996      | Colombia | masculino | C:\Users\elmie\Desktop\descarga.jfif |
 
     Entonces el deberia ver el mensaje Tu información se guardó correctamente
 

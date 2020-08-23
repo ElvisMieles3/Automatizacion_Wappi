@@ -23,4 +23,8 @@ public class LoginUserInterface {
     public static  final Target MENSAJE_RESPUESTA = Target.
             the("Muestra el mensaje de las ofertas seleccionadas")
             .locatedBy("//*[text() = 'Ofertas']");
+
+    public static  final Target MENSAJE_USUARIO_INCORRECTO = Target.
+            the("Muestra el mensaje de las ofertas seleccionadas")
+            .located(By.id("e-username"));
 }

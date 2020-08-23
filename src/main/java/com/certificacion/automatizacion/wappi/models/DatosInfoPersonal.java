@@ -1,5 +1,7 @@
 package com.certificacion.automatizacion.wappi.models;
 
+import java.nio.file.Paths;
+
 public class DatosInfoPersonal {
 
 
@@ -8,15 +10,15 @@ public class DatosInfoPersonal {
     private String fechaNacimiento;
     private String pais;
     private String sexo;
-    private String urlImagen;
+    private String imagen;
 
-    public DatosInfoPersonal(String nombre, String apellido, String fechaNacimiento, String pais, String sexo, String urlImagen) {
+    public DatosInfoPersonal(String nombre, String apellido, String fechaNacimiento, String pais, String sexo, String imagen) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.fechaNacimiento = fechaNacimiento;
         this.pais = pais;
         this.sexo = sexo;
-        this.urlImagen = urlImagen;
+        this.imagen = imagen;
     }
 
     public String getNombre() {
@@ -44,7 +46,8 @@ public class DatosInfoPersonal {
     }
 
     public String getUrlImagen() {
-
+        String absolutePath = Paths.get(".").toAbsolutePath().normalize().toString();
+        String urlImagen = absolutePath + "\\assets\\" + this.imagen;
         return urlImagen;
     }
 }

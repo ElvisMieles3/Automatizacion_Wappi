@@ -23,7 +23,6 @@ public class ActualizarDatosPersonal implements Task {
 
         actor.attemptsTo(Click.on(ActualizarInfoPersonalUserInterfaces.INGRESA_INFORMACION_PERSONAL));
 
-        //actor.attemptsTo(Click.on(ActualizarInfoPersonalUserInterfaces.ABRIR_BUSCADOR_IMAGEN));
         actor.attemptsTo(Enter.keyValues(datosInfoPersonal.getUrlImagen()).
                 into(ActualizarInfoPersonalUserInterfaces.ABRIR_BUSCADOR_IMAGEN));
 

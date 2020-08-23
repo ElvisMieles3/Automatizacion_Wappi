@@ -5,7 +5,10 @@ import com.certificacion.automatizacion.wappi.userinterfaces.PedirOrdenStepDefin
 import com.certificacion.automatizacion.wappi.userinterfaces.SolicitarCuponStepDefinition;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
+import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.actions.Enter;
+import org.openqa.selenium.remote.server.handler.GetElementAttribute;
 
 public class PedirOrdenUtilizandoCupon implements Task {
     private OrdenPedido ordenPedido;
@@ -18,10 +21,12 @@ public class PedirOrdenUtilizandoCupon implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(Click.on(SolicitarCuponStepDefinition.SELECCIONA_BOTON_OBTENER_CUPON));
+        String codigoCupon = BrowseTheWeb.as(actor).findBy(SolicitarCuponStepDefinition.SELECCIONA_CODIGO_CUPON.getCssOrXPathSelector()).getText();
         actor.attemptsTo(Click.on(SolicitarCuponStepDefinition.CIERRA_POPUP));
         actor.attemptsTo(Click.on(SolicitarCuponStepDefinition.HOME));
         actor.attemptsTo(Click.on(PedirOrdenStepDefinition.SELECCIONA_PRODUCTO));
-      /// aqui se debe digitar el cupon
+      
+        actor.attemptsTo(Enter.theValue(codigoCupon).into(SolicitarCuponStepDefinition.ESCRIBIR_CUPON));
         actor.attemptsTo(Click.on(PedirOrdenStepDefinition.CONFIRMAR_PRODUCTO));
     }
 

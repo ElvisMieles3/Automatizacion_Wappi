@@ -11,7 +11,7 @@ public class SolicitarCuponStepDefinition {
     //ubicaciòn del cupon
     public static final Target SELECCIONA_CODIGO_CUPON = Target.
             the("Selecciona el codigo del cupòn")
-            .located(By.id("coupon-code"));
+            .locatedBy("//span[@id='coupon-code']");
 
     public static final Target CIERRA_POPUP = Target.
             the("Cierra el Popup")

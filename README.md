@@ -18,7 +18,7 @@ Para la ejecución de este proyecto desdemos tener presente que debemos tener in
 
     MAVEN_HOME: Descarga el Apache Maven y se adjunta la ruta en donde se encuentre la carpeta, en mi caso la tengo en C:\Program Files\apache-maven-3.6.3-bin\apache-maven-3.6.3
 
-Tener un IDEA instalado para la observación o modificación del codigo.
+Tener un IDE instalado para la observación o modificación del codigo.
 
 En la raiz de proyecto debemos tener 3 archivos, los cuales son:
    - serenity.properties
@@ -33,6 +33,8 @@ La prueba se puede ejecutar por medio del package runners, la cual esta ubicada 
        
        mvn clean verify
 
+En el campo imagen  del archivo actualizar_informacion_personal  que esta ubicado en src\test\resources\features\actualizar_informacion_personal.feature se debe cambiar la ruta por la ubicación de la imagen que se desea adjuntar; La ruta debe ser adsoluta. 
+ 
 Para observar las evidencias de las pruebas debemos ejecutar el script y ingresar a la ruta target\site\serenity , allí buscamos  archivo Index que encontramos en la carpeta.
 
 Analizar el codigo con Sonarqube ⌨️️

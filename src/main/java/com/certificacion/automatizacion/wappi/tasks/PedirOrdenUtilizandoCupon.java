@@ -25,7 +25,7 @@ public class PedirOrdenUtilizandoCupon implements Task {
         actor.attemptsTo(Click.on(SolicitarCuponStepDefinition.CIERRA_POPUP));
         actor.attemptsTo(Click.on(SolicitarCuponStepDefinition.HOME));
         actor.attemptsTo(Click.on(PedirOrdenStepDefinition.SELECCIONA_PRODUCTO));
-      
+
         actor.attemptsTo(Enter.theValue(codigoCupon).into(SolicitarCuponStepDefinition.ESCRIBIR_CUPON));
         actor.attemptsTo(Click.on(PedirOrdenStepDefinition.CONFIRMAR_PRODUCTO));
     }

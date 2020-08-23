@@ -4,6 +4,7 @@ import com.certificacion.automatizacion.wappi.models.OrdenPedido;
 import com.certificacion.automatizacion.wappi.models.Paginas;
 import com.certificacion.automatizacion.wappi.questions.Cupones;
 import com.certificacion.automatizacion.wappi.questions.ObservarMisPedidos;
+import com.certificacion.automatizacion.wappi.tasks.PedirDosProductosConElMismoCupon;
 import com.certificacion.automatizacion.wappi.tasks.PedirTresProductosConElMismoCupon;
 import com.certificacion.automatizacion.wappi.tasks.PedirUnaOrdenUtilizandoCupon;
 import cucumber.api.java.ast.Cuando;
@@ -53,9 +54,9 @@ public class PedirOrden {
 
     }
 
-    @Cuando("^selecciona tres producto con el mismo cupon$")
+    @Cuando("^selecciona dos producto con el mismo cupon y consulta nuevamente el codigo$")
     public void seleccionaelproductoconelmismocupon(List<OrdenPedido> ordenPedidos) {
-        OnStage.theActorInTheSpotlight().attemptsTo(PedirTresProductosConElMismoCupon.
+        OnStage.theActorInTheSpotlight().attemptsTo(PedirDosProductosConElMismoCupon.
                 conDatos(ordenPedidos.get(0)));
 
     }
@@ -64,5 +65,12 @@ public class PedirOrden {
     public void debeVerElmensajemiscupones(String mensajeCuponNoDisponible) {
         theActorInTheSpotlight().should(seeThat(Cupones.mensaje(),
                 org.hamcrest.Matchers.is(mensajeCuponNoDisponible)));
+    }
+
+    @Cuando("^hace tres compras con el mismo cupòn$")
+    public void seleccionatresproductoconelmismocupon(List<OrdenPedido> ordenPedidos) {
+        OnStage.theActorInTheSpotlight().attemptsTo(PedirTresProductosConElMismoCupon.
+                conDatos(ordenPedidos.get(0)));
+
     }
 }

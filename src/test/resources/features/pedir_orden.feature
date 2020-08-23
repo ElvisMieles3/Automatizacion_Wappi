@@ -32,7 +32,15 @@ Característica: Solicitar una orden
     Entonces  debe ver el producto Jamón Premium
 
   Escenario: El usuario Elvis desea realizar una orden usando el cupòn 3 veces
-    Cuando selecciona tres producto con el mismo cupon
+    Cuando selecciona dos producto con el mismo cupon y consulta nuevamente el codigo
+      | nombreProducto |
+      | Jamón Premium  |
+      | Jamón Premium  |
+    Entonces en la página de cupones debe mostrar el siguiente mensaje No se encontraron registros
+
+
+  Escenario: El usuario Elvis desea realizar una orden usando el cupòn 3 veces
+    Cuando hace tres compras con el mismo cupòn
       | nombreProducto |
       | Jamón Premium  |
       | Jamón Premium  |

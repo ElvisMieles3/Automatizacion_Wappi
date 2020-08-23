@@ -11,15 +11,16 @@ import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 
-public class PedirTresProductosConElMismoCupon implements Task {
-
+public class PedirDosProductosConElMismoCupon implements Task {
     private OrdenPedido ordenPedido;
-    public PedirTresProductosConElMismoCupon(OrdenPedido ordenPedido) {
+
+    public PedirDosProductosConElMismoCupon(OrdenPedido ordenPedido) {
 
         this.ordenPedido = ordenPedido;
     }
     @Override
     public <T extends Actor> void performAs(T actor) {
+
         actor.attemptsTo(Click.on(SolicitarCuponUserInterface.SELECCIONA_BOTON_OBTENER_CUPON));
         String codigoCupon = BrowseTheWeb.as(actor).findBy(SolicitarCuponUserInterface.
                 SELECCIONA_CODIGO_CUPON.getCssOrXPathSelector()).getText();
@@ -39,15 +40,12 @@ public class PedirTresProductosConElMismoCupon implements Task {
         actor.attemptsTo(Click.on(PedirOrdenUserInterface.CONFIRMAR_PRODUCTO));
         actor.attemptsTo(Click.on(MisProductosUserInterface.CERRAR_POPUP));
 
-        actor.attemptsTo(Click.on(SolicitarCuponUserInterface.HOME));
-        actor.attemptsTo(Click.on(PedirOrdenUserInterface.SELECCIONA_PRODUCTO));
-        actor.attemptsTo(Enter.theValue(codigoCuponPaginaMisCupones).into(SolicitarCuponUserInterface.ESCRIBIR_CUPON));
-        actor.attemptsTo(Click.on(PedirOrdenUserInterface.CONFIRMAR_PRODUCTO));
+        actor.attemptsTo(Click.on(PaginaCupones.INGRESA_MISCUPONES));
+
 
     }
-    public static PedirTresProductosConElMismoCupon conDatos(OrdenPedido ordenPedido) {
+    public static PedirDosProductosConElMismoCupon conDatos(OrdenPedido ordenPedido) {
 
-        return new PedirTresProductosConElMismoCupon(ordenPedido);
+        return new PedirDosProductosConElMismoCupon(ordenPedido);
     }
 }
-

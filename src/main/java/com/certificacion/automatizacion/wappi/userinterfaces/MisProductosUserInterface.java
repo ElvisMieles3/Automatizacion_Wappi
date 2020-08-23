@@ -3,7 +3,7 @@ package com.certificacion.automatizacion.wappi.userinterfaces;
 import net.serenitybdd.screenplay.targets.Target;
 import org.openqa.selenium.By;
 
-public class MisProductosStepDefinition {
+public class MisProductosUserInterface {
 
     public static final Target CERRAR_POPUP = Target.
             the("Cierra el popup")

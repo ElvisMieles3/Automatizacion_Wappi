@@ -30,3 +30,12 @@ Característica: Solicitar una orden
       | sitio      |
       | misPedidos |
     Entonces  debe ver el producto Jamón Premium
+
+  Escenario: El usuario Elvis desea realizar una orden usando el cupòn 3 veces
+    Cuando selecciona tres producto con el mismo cupon
+      | nombreProducto |
+      | Jamón Premium  |
+      | Jamón Premium  |
+    Entonces en la página de cupones debe mostrar el siguiente mensaje No se encontraron registros
+
+

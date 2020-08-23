@@ -1,16 +1,12 @@
 package com.certificacion.automatizacion.wappi.stepdefinitions;
 
-import com.certificacion.automatizacion.wappi.models.DatosInfoPersonal;
 import com.certificacion.automatizacion.wappi.models.OrdenPedido;
 import com.certificacion.automatizacion.wappi.models.Paginas;
-import com.certificacion.automatizacion.wappi.questions.Login;
+import com.certificacion.automatizacion.wappi.questions.Cupones;
 import com.certificacion.automatizacion.wappi.questions.ObservarMisPedidos;
-import com.certificacion.automatizacion.wappi.tasks.ActualizarDatosPersonal;
-import com.certificacion.automatizacion.wappi.tasks.ObservarMisProductos;
-import com.certificacion.automatizacion.wappi.tasks.PedirOrdenUtilizandoCupon;
+import com.certificacion.automatizacion.wappi.tasks.PedirTresProductosConElMismoCupon;
+import com.certificacion.automatizacion.wappi.tasks.PedirUnaOrdenUtilizandoCupon;
 import cucumber.api.java.ast.Cuando;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
 import net.serenitybdd.screenplay.actors.OnStage;
 
@@ -52,8 +48,21 @@ public class PedirOrden {
 
     @Cuando("^selecciona el producto con cupon$")
     public void seleccionaelproductoconcupon(List<OrdenPedido> ordenPedidos) {
-        OnStage.theActorInTheSpotlight().attemptsTo(PedirOrdenUtilizandoCupon.
+        OnStage.theActorInTheSpotlight().attemptsTo(PedirUnaOrdenUtilizandoCupon.
                 conDatos(ordenPedidos.get(0)));
 
+    }
+
+    @Cuando("^selecciona tres producto con el mismo cupon$")
+    public void seleccionaelproductoconelmismocupon(List<OrdenPedido> ordenPedidos) {
+        OnStage.theActorInTheSpotlight().attemptsTo(PedirTresProductosConElMismoCupon.
+                conDatos(ordenPedidos.get(0)));
+
+    }
+
+    @Entonces("^en la página de cupones debe mostrar el siguiente mensaje (.*)$")
+    public void debeVerElmensajemiscupones(String mensajeCuponNoDisponible) {
+        theActorInTheSpotlight().should(seeThat(Cupones.mensaje(),
+                org.hamcrest.Matchers.is(mensajeCuponNoDisponible)));
     }
 }

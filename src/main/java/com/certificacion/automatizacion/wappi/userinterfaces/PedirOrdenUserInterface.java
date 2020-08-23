@@ -3,7 +3,7 @@ package com.certificacion.automatizacion.wappi.userinterfaces;
 import net.serenitybdd.screenplay.targets.Target;
 import org.openqa.selenium.By;
 
-public class PedirOrdenStepDefinition {
+public class PedirOrdenUserInterface {
 
     public static final Target SELECCIONA_PRODUCTO = Target.
             the("Selecciona producto")

@@ -1,7 +1,7 @@
 package com.certificacion.automatizacion.wappi.tasks;
 
 import com.certificacion.automatizacion.wappi.models.OrdenPedido;
-import com.certificacion.automatizacion.wappi.userinterfaces.PedirOrdenStepDefinition;
+import com.certificacion.automatizacion.wappi.userinterfaces.PedirOrdenUserInterface;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
@@ -18,8 +18,8 @@ public class PedirOrden implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        actor.attemptsTo(Click.on(PedirOrdenStepDefinition.SELECCIONA_PRODUCTO));
-        actor.attemptsTo(Click.on(PedirOrdenStepDefinition.CONFIRMAR_PRODUCTO));
+        actor.attemptsTo(Click.on(PedirOrdenUserInterface.SELECCIONA_PRODUCTO));
+        actor.attemptsTo(Click.on(PedirOrdenUserInterface.CONFIRMAR_PRODUCTO));
 
     }
 

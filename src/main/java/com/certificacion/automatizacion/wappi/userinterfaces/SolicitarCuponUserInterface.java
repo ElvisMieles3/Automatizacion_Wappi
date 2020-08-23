@@ -3,7 +3,7 @@ package com.certificacion.automatizacion.wappi.userinterfaces;
 import net.serenitybdd.screenplay.targets.Target;
 import org.openqa.selenium.By;
 
-public class SolicitarCuponStepDefinition {
+public class SolicitarCuponUserInterface {
     public static final Target SELECCIONA_BOTON_OBTENER_CUPON = Target.
             the("Selecciona producto")
             .located(By.id("welcome-coupon"));

@@ -25,6 +25,10 @@ public class LoginUserInterface {
             .locatedBy("//*[text() = 'Ofertas']");
 
     public static  final Target MENSAJE_USUARIO_INCORRECTO = Target.
-            the("Muestra el mensaje de las ofertas seleccionadas")
+            the("Muestra el mensaje del usuario incorrecto")
             .located(By.id("e-username"));
+
+    public static  final Target MENSAJE_CONTRASEÑA_INCORRECTO = Target.
+            the("Muestra el mensaje de la contraseña incorrecta")
+            .located(By.id("e-password"));
 }

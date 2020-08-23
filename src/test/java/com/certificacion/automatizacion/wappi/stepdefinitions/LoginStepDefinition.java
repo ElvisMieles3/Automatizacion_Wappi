@@ -2,6 +2,8 @@ package com.certificacion.automatizacion.wappi.stepdefinitions;
 
 import com.certificacion.automatizacion.wappi.models.DatosLogin;
 import com.certificacion.automatizacion.wappi.questions.Login;
+import com.certificacion.automatizacion.wappi.questions.pantallaloguin.ContrasenaIncorrecta;
+import com.certificacion.automatizacion.wappi.questions.pantallaloguin.UsuarioIncorrecto;
 import com.certificacion.automatizacion.wappi.tasks.AbrirNavegador;
 import com.certificacion.automatizacion.wappi.tasks.IngresarDatosLogin;
 import cucumber.api.java.Before;
@@ -48,4 +50,17 @@ public class LoginStepDefinition {
                 org.hamcrest.Matchers.is(login)));
     }
 
+    @Then("^el usuario debe ver el mensaje (.*) en el campo usuario$")
+    public void elUsuarioDebeVerElmensaje(String usuarioIncorrecto) {
+        theActorInTheSpotlight().should(seeThat(UsuarioIncorrecto.mensaje(),
+                org.hamcrest.Matchers.is(usuarioIncorrecto)));
+
+    }
+
+    @Then("^el usuario debe ver el mensaje (.*) en el campo contraseña$")
+    public void elUsuarioDebeVerElmensajeContrasena(String contrasenaIncorrecto) {
+        theActorInTheSpotlight().should(seeThat(ContrasenaIncorrecta.mensaje(),
+                org.hamcrest.Matchers.is(contrasenaIncorrecto)));
+
+    }
 }

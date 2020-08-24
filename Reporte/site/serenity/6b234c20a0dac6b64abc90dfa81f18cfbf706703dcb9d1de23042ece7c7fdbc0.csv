@@ -1,0 +1,4 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Solicitar una orden","El usuario Elvis desea realizar una orden sin cupòn","SUCCESS","2020-08-24T08:32:42.4530643-05:00[America/Mexico_City]","0.0","22.73"
+"Solicitar una orden","El usuario Elvis desea realizar una orden usando el cupòn","SUCCESS","2020-08-24T08:33:05.3541617-05:00[America/Mexico_City]","0.0","26.74"
+"Solicitar una orden","El usuario Elvis desea realizar una orden usando el cupòn 3 veces","SUCCESS","2020-08-24T08:33:32.5939409-05:00[America/Mexico_City]","0.0","71.27"

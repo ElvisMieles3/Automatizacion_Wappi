@@ -1,0 +1,6 @@
+com\certificacion\automatizacion\wappi\runners\LoginRunner.class
+com\certificacion\automatizacion\wappi\runners\ActualizaInformacionPersonalRunner.class
+com\certificacion\automatizacion\wappi\runners\PedirOrden.class
+com\certificacion\automatizacion\wappi\stepdefinitions\ActualizaInformacionPersonalStepDefinition.class
+com\certificacion\automatizacion\wappi\stepdefinitions\LoginStepDefinition.class
+com\certificacion\automatizacion\wappi\stepdefinitions\PedirOrden.class

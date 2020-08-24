@@ -1,0 +1,4 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Registrar los datos personales",": El usuario Elvis desea actualizar lo informaciòn personal correctamente","SUCCESS","2020-08-24T08:23:45.6312848-05:00[America/Mexico_City]","0.0","45.66"
+"Registrar los datos personales","El usuario Elvis desea actualizar la informaciòn sin el campo nombre","SUCCESS","2020-08-24T08:26:40.545339-05:00[America/Mexico_City]","0.0","72.43"
+"Registrar los datos personales","El usuario Elvis desea actualizar la informaciòn sin el campo Apellido","SUCCESS","2020-08-24T08:27:58.4941464-05:00[America/Mexico_City]","0.0","74.5"

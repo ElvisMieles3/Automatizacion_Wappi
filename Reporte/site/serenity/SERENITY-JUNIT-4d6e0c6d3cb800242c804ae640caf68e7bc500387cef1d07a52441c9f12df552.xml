@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="3" name="Registrar los datos personales" skipped="0" tests="13" time="354.63" timestamp="2020-08-24 08:23:45"><testcase name=": El usuario Elvis desea actualizar lo informaciòn personal correctamente"/><testcase name="El usuario Elvis desea actualizar la informaciòn sin la imagen"><failure message="&#10;Expected: an element that is visible&#10;     but: no matching element found by id: e-image" type="java.lang.AssertionError">
+Expected: an element that is visible
+     but: no matching element found by id: e-image</failure><system-err>
+Expected: an element that is visible
+     but: no matching element found by id: e-image&#13;
+com.certificacion.automatizacion.wappi.questions.pantallainformacioncliente.Imagen.answeredBy(Imagen.java:14)&#13;
+com.certificacion.automatizacion.wappi.questions.pantallainformacioncliente.Imagen.answeredBy(Imagen.java:11)&#13;
+com.certificacion.automatizacion.wappi.stepdefinitions.ActualizaInformacionPersonalStepDefinition.elDeberiaVerElMensajeTuInformaciónSeGuardóCorrectamentecampo(ActualizaInformacionPersonalStepDefinition.java:40)&#13;
+java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#13;
+java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)&#13;
+java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)&#13;
+cucumber.runner.Runner.runPickle(Runner.java:80)&#13;
+</system-err></testcase><testcase name="El usuario Elvis desea actualizar la informaciòn sin el campo nombre"/><testcase name="El usuario Elvis desea actualizar la informaciòn sin el campo Apellido"/><testcase name="El usuario Elvis desea actualizar la informaciòn sin el campo Fecha de nacimiento"><failure message="&#10;Expected: is &quot;La fecha incorrecta&quot;&#10;     but: was &quot;La fecha debe tener el formato dd/mm/yyyy&quot;" type="java.lang.AssertionError">
+Expected: is "La fecha incorrecta"
+     but: was "La fecha debe tener el formato dd/mm/yyyy"</failure><system-err>
+Expected: is "La fecha incorrecta"
+     but: was "La fecha debe tener el formato dd/mm/yyyy"&#13;
+com.certificacion.automatizacion.wappi.stepdefinitions.ActualizaInformacionPersonalStepDefinition.elDeberiaVerElMensajeTuInformaciónSeGuardóCorrectamentecampoFECHANACIMIENTO(ActualizaInformacionPersonalStepDefinition.java:61)&#13;
+✽.el deberia ver en el campo de fecha de nacimiento un mensaje La fecha incorrecta(src/test/resources/features/actualizar_informacion_personal.feature:72)&#13;
+</system-err></testcase></testsuite>

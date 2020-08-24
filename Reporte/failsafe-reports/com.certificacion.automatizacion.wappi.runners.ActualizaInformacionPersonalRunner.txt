@@ -1,0 +1,22 @@
+-------------------------------------------------------------------------------
+Test set: com.certificacion.automatizacion.wappi.runners.ActualizaInformacionPersonalRunner
+-------------------------------------------------------------------------------
+Tests run: 13, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 455.999 s <<< FAILURE! - in com.certificacion.automatizacion.wappi.runners.ActualizaInformacionPersonalRunner
+El usuario Elvis desea actualizar la informaciòn sin la imagen(Registrar los datos personales)  Time elapsed: 60.56 s  <<< FAILURE!
+java.lang.AssertionError: 
+
+Expected: an element that is visible
+     but: no matching element found by id: e-image
+
+El usuario Elvis desea actualizar la informaciòn sin la imagen(Registrar los datos personales)  Time elapsed: 58.608 s  <<< FAILURE!
+java.lang.AssertionError: 
+
+Expected: an element that is visible
+     but: no matching element found by id: e-image
+
+El usuario Elvis desea actualizar la informaciòn sin el campo Fecha de nacimiento(Registrar los datos personales)  Time elapsed: 35.953 s  <<< FAILURE!
+java.lang.AssertionError: 
+
+Expected: is "La fecha incorrecta"
+     but: was "La fecha debe tener el formato dd/mm/yyyy"
+

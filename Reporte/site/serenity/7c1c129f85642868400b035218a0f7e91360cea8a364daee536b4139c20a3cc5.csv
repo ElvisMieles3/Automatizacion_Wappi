@@ -1,0 +1,3 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Login","ingresar al sistema con un usuario incorrecto","SUCCESS","2020-08-24T08:31:49.3788455-05:00[America/Mexico_City]","0.0","35.77"
+"Login","ingresar al sistema por primera vez","SUCCESS","2020-08-24T08:32:25.9226172-05:00[America/Mexico_City]","0.0","14.23"

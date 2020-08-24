@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>Features</title>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!--[if IE 7]>
+<!--<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">-->
+
+<link rel="stylesheet" href="fontawesome-free-5.3.1-web/css/all.css">
+<link rel="stylesheet" href="fontawesome-free-5.3.1-web/css/v4-shims.css">
+
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.css">
+<link rel="stylesheet" href="chartist/dist/chartist.min.css">
+<script src="chartist/dist/chartist.min.js"></script>
+<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.js"></script>
+<!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.19/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.19/datatables.min.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.19/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.19/datatables.bootstrap4.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- JQuery-UI -->
+<link type="text/css" href="jqueryui/1.11.2-start/jquery-ui.min.css" rel="Stylesheet" />
+<script type="text/javascript" src="jqueryui/1.11.2-start/jquery-ui.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.19/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.19/datatables.min.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.19/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.19/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+
+
+    <script>
+
+        $(document).ready(function () {
+
+            var scenarioTable = $('.scenario-result-table').DataTable({
+
+                "order": [],
+                "language": {
+                    searchPlaceholder: "Filter",
+                    search: ""
+                }
+            });
+
+            $('.example-table table').DataTable({
+                searching: false,
+                ordering: false,
+                paging: false,
+                info: false
+            });
+
+            $('.example-table-in-scenario table').DataTable({
+                searching: false,
+                ordering: false,
+                paging: false,
+                info: false
+            });
+
+            $('#evidence-table').DataTable(
+                    {
+                        searching: false,
+                        ordering: false,
+                        paging: false,
+                        info: false
+                    }
+            );
+
+
+            $(".scenario-docs .card-body table").wrap("<div class='table-responsive'></div>");
+
+            $("#requirements-tabs").tabs();
+            $("#test-tabs").tabs();
+
+            var requirementsTree = [{"text":"Registrar los datos personales","type":"feature","href":"60fceef1809bfc508025ef0193332405f0eab6b518862b52e51cd6c6822348f7.html","nodes":[],"selectable":false,"tags":["","\u003cspan class\u003d\u0027feature-count\u0027\u003e5 scenarios\u003c/span\u003e"]}];
+
+            $('#tree').treeview({
+                data: requirementsTree,
+                enableLinks: true,
+                showTags: true,
+                expandIcon: "glyphicon glyphicon-folder-close",
+                collapseIcon: "glyphicon glyphicon-folder-open",
+                emptyIcon: "glyphicon glyphicon-book"
+            });
+
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $(".scenario-docs p").html(function () {
+                var text = $(this).text().trim().split(" ");
+                var first = text.shift();
+                return (text.length > 0 ? "<strong>" + first + "</strong> " : first) + text.join(" ");
+            });
+        });
+    </script>
+</head>
+
+<body class="results-page">
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname"></span>
+        </div>
+    </div>
+</div>
+
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+            <a href='index.html'>Home</a> > <a href="capabilities.html">Requirements</a>
+
+
+
+                > <span class="truncate-40">Registrar Los Datos Personales</span>
+
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li >
+            <a href="index.html"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
+        </li>
+        <li class="active">
+            <a href="#"><i class="fa fa-comments-o"></i> Features</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 24-08-2020 08:23</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+    <div id="beforetable"></div>
+    <div id="results-dashboard">
+        <div class="table">
+                <div class=row">
+                    <div class="col-sm-12">
+                        <div>
+                            <div clas="table">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                    <span>
+                                            <h2><i class="fa fa-book"></i> Feature:  Registrar Los Datos Personales</h2>
+                                        </span>
+                                </div>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="requirementNarrativeTitle">
+                                Como analista de calidad se desea validar el correcto<br />
+funcionamiento de actualizar informaciòn personal.
+                            </div>
+
+                        </div>
+                    </div>
+
+
+            <div class="row">
+                <div class="col-sm-12">
+
+                    <!-- Requirements result tabs -->
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a data-toggle="tab" href="#specs"><i class="fas fa-comments"></i> Specifications</a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#results"><i class="fas fa-tachometer-alt"></i> Test Results</a>
+                        </li>
+                    </ul>
+
+                    <!-- Specifications and Results tabs -->
+                    <div class="card border">
+                        <div class="tab-content" id="pills-tabContent">
+                            <div id="specs" class="tab-pane fade in active">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+
+
+                                            <h3>Scenarios</h3>
+
+                                            <div id="toc">
+                                                <table class="table" id="toc-table">
+                                                        <tr>
+                                                            <td style="width:99%;" class="toc-title"><a href="#029c63b3d4ed043eded76a2d65cc7dcf45ca5949581aeac1f31c2873726c7a7a">Inicio sesión</a>
+
+
+                                                            </td>
+                                                            <td style="width:1%;">
+                                                               
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:99%;" class="toc-title"><a href="#7ce78bb0d9078785a7cbb8fcc4b06771f4f9c10021b1b11a67f1e419f2a5d9d0">: El usuario Elvis desea actualizar lo informaciòn personal correctamente</a>
+                                                                     (1 example)
+
+                                                            </td>
+                                                            <td style="width:1%;"><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i>
+                                                               
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:99%;" class="toc-title"><a href="#3f273b84758de905d65372fdbaa2e0da3b31cd59bc3f41e108c5ffe0fb5fb68a">El usuario Elvis desea actualizar la informaciòn sin la imagen</a>
+                                                                     (2 examples)
+
+                                                            </td>
+                                                            <td style="width:1%;"><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i>
+                                                               
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:99%;" class="toc-title"><a href="#ab4766acf065d016fdbdf66849afd594c855c59a11ea27fcf9b0ebb5c4e902d9">El usuario Elvis desea actualizar la informaciòn sin el campo nombre</a>
+                                                                     (3 examples)
+
+                                                            </td>
+                                                            <td style="width:1%;"><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i>
+                                                               
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:99%;" class="toc-title"><a href="#5269a80859ac3bbc1a81063cdbec9680053d137402dfa37d4288c05134b5b106">El usuario Elvis desea actualizar la informaciòn sin el campo Apellido</a>
+                                                                     (3 examples)
+
+                                                            </td>
+                                                            <td style="width:1%;"><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i>
+                                                               
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:99%;" class="toc-title"><a href="#6a3ebe55a2d173870c6633069d8d869a55749ab06c7c4acc3f97b86a09672c73">El usuario Elvis desea actualizar la informaciòn sin el campo Fecha de nacimiento</a>
+                                                                     (4 examples)
+
+                                                            </td>
+                                                            <td style="width:1%;"><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i>
+                                                               
+                                                            </td>
+                                                        </tr>
+                                                </table>
+
+                                            </div>
+
+                                            <h3>Scenario details</h3>
+
+
+                                                <div class="scenario-docs card" id="029c63b3d4ed043eded76a2d65cc7dcf45ca5949581aeac1f31c2873726c7a7a">
+                                                    <div class="scenario-docs card-header undefined" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                Inicio sesión
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <i class="fas fa-pause"
+                                                                       title="No test has been implemented yet"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Dado que Elvis esta en el portal</p>
+                                                            <p><p>Cuando el ingresa las credenciales para ingresar</p>
+<table>
+<thead>
+<tr><th>usuario</th><th>contrasena</th></tr>
+</thead>
+<tbody>
+<tr><td>ElvisMieles</td><td>_M1elesG*2019</td></tr>
+</tbody>
+</table>
+</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="scenario-docs card" id="7ce78bb0d9078785a7cbb8fcc4b06771f4f9c10021b1b11a67f1e419f2a5d9d0">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                : El usuario Elvis desea actualizar lo informaciòn personal correctamente
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i>
+                                                            </span>
+                                                        </div>
+                                                        <div class="scenario-report-badges">
+                                                                <span class="scenario-report-badge" style="float:right;"><a href='4d6e0c6d3cb800242c804ae640caf68e7bc500387cef1d07a52441c9f12df552.html' class='badge more-details'>Details</a></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p><p>Dado que el usuario se encuentra en la pantalla de Información Personal y digita los datos</p>
+<table>
+<thead>
+<tr><th>nombre</th><th>apellido</th><th>fechaNacimiento</th><th>pais</th><th>sexo</th><th>imagen</th></tr>
+</thead>
+<tbody>
+<tr><td>{nombre}</td><td>{apellido}</td><td>{fechaNacimiento}</td><td>{pais}</td><td>{sexo}</td><td>{imagen}</td></tr>
+</tbody>
+</table>
+</p>
+                                                            <p>Entonces el deberia ver el mensaje {mensaje}</p>
+                                                        <div class="examples">
+                                                            <p><p>Ejemplos: Datos</p>
+<div class='example-table-in-scenario'><table>
+<thead>
+<tr><th>nombre</th><th>apellido</th><th>fechaNacimiento</th><th>pais</th><th>sexo</th><th>imagen</th><th>mensaje</th><th></th></tr>
+</thead>
+<tbody>
+<tr><td>Elvis Miguel</td><td>Mieles Guarin</td><td>04/03/1996</td><td>Colombia</td><td>masculino</td><td>naranja.jfif</td><td>Tu información se guardó correctamente</td><td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></td></tr>
+</tbody>
+</table></div>
+</p>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="scenario-docs card" id="3f273b84758de905d65372fdbaa2e0da3b31cd59bc3f41e108c5ffe0fb5fb68a">
+                                                    <div class="scenario-docs card-header failure" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                El usuario Elvis desea actualizar la informaciòn sin la imagen
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <i class='fa fa-times-circle failure-icon ' title='FAILURE'></i>
+                                                            </span>
+                                                        </div>
+                                                        <div class="scenario-report-badges">
+                                                                <span class="scenario-report-badge" style="float:right;"><a href='430ed441ac1b1728d30abe19c94d35b899be811e96be35f745c6074bf5efe721.html' class='badge more-details'>Details</a></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p><p>Dado que el usuario se encuentra en la pantalla de Información Personal y digita los datos</p>
+<table>
+<thead>
+<tr><th>nombre</th><th>apellido</th><th>fechaNacimiento</th><th>pais</th><th>sexo</th><th>imagen</th></tr>
+</thead>
+<tbody>
+<tr><td>{nombre}</td><td>{apellido}</td><td>{fechaNacimiento}</td><td>{pais}</td><td>{sexo}</td><td>{imagen}</td></tr>
+</tbody>
+</table>
+</p>
+                                                            <p>Entonces el deberia ver en el campo de la imagen un mensaje {mensaje}</p>
+                                                        <div class="examples">
+                                                            <p><p>Ejemplos: Datos</p>
+<div class='example-table-in-scenario'><table>
+<thead>
+<tr><th>nombre</th><th>apellido</th><th>fechaNacimiento</th><th>pais</th><th>sexo</th><th>imagen</th><th>mensaje</th><th></th></tr>
+</thead>
+<tbody>
+<tr><td>Elvis Miguel</td><td>Mieles Guarin</td><td>04/03/1996</td><td>Colombia</td><td>masculino</td><td></td><td>La imagen es requerida</td><td><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i></td></tr>
+<tr><td>Elvis Miguel</td><td>Mieles Guarin</td><td>04/03/1996</td><td>Colombia</td><td>masculino</td><td>pruebapdf.pdf</td><td>El archivo no es valido</td><td><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i></td></tr>
+</tbody>
+</table></div>
+</p>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="scenario-docs card" id="ab4766acf065d016fdbdf66849afd594c855c59a11ea27fcf9b0ebb5c4e902d9">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                El usuario Elvis desea actualizar la informaciòn sin el campo nombre
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i>
+                                                            </span>
+                                                        </div>
+                                                        <div class="scenario-report-badges">
+                                                                <span class="scenario-report-badge" style="float:right;"><a href='cc14bfc86caa09497d702b967bbf72e04d012a26873e5d1c43ecd1e82cd13492.html' class='badge more-details'>Details</a></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p><p>Dado que el usuario se encuentra en la pantalla de Información Personal y digita los datos</p>
+<table>
+<thead>
+<tr><th>nombre</th><th>apellido</th><th>fechaNacimiento</th><th>pais</th><th>sexo</th><th>imagen</th></tr>
+</thead>
+<tbody>
+<tr><td>{nombre}</td><td>{apellido}</td><td>{fechaNacimiento}</td><td>{pais}</td><td>{sexo}</td><td>{imagen}</td></tr>
+</tbody>
+</table>
+</p>
+                                                            <p>Entonces el deberia ver en el campo de la nombre un mensaje {mensaje}</p>
+                                                        <div class="examples">
+                                                            <p><p>Ejemplos: Datos</p>
+<div class='example-table-in-scenario'><table>
+<thead>
+<tr><th>nombre</th><th>apellido</th><th>fechaNacimiento</th><th>pais</th><th>sexo</th><th>imagen</th><th>mensaje</th><th></th></tr>
+</thead>
+<tbody>
+<tr><td></td><td>Mieles Guarin</td><td>04/03/1996</td><td>Colombia</td><td>masculino</td><td>naranja.jfif</td><td>El nombre es requerido</td><td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></td></tr>
+<tr><td>.</td><td>Mieles Guarin</td><td>04/03/1996</td><td>Colombia</td><td>masculino</td><td>naranja.jfif</td><td>El nombre debe ser solo letras</td><td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></td></tr>
+<tr><td>Elvis Mi.guel</td><td>Mieles Guarin</td><td>04/03/1996</td><td>Colombia</td><td>masculino</td><td>naranja.jfif</td><td>El nombre debe ser solo letras</td><td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></td></tr>
+</tbody>
+</table></div>
+</p>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="scenario-docs card" id="5269a80859ac3bbc1a81063cdbec9680053d137402dfa37d4288c05134b5b106">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                El usuario Elvis desea actualizar la informaciòn sin el campo Apellido
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i>
+                                                            </span>
+                                                        </div>
+                                                        <div class="scenario-report-badges">
+                                                                <span class="scenario-report-badge" style="float:right;"><a href='a6863e5742bf29b0daa91a6d2847f6e78018a6cc4adb9b7fc60ad952263d322b.html' class='badge more-details'>Details</a></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p><p>Dado que el usuario se encuentra en la pantalla de Información Personal y digita los datos</p>
+<table>
+<thead>
+<tr><th>nombre</th><th>apellido</th><th>fechaNacimiento</th><th>pais</th><th>sexo</th><th>imagen</th></tr>
+</thead>
+<tbody>
+<tr><td>{nombre}</td><td>{apellido}</td><td>{fechaNacimiento}</td><td>{pais}</td><td>{sexo}</td><td>{imagen}</td></tr>
+</tbody>
+</table>
+</p>
+                                                            <p>Entonces el deberia ver en el campo de apellido un mensaje {mensaje}</p>
+                                                        <div class="examples">
+                                                            <p><p>Ejemplos: Datos</p>
+<div class='example-table-in-scenario'><table>
+<thead>
+<tr><th>nombre</th><th>apellido</th><th>fechaNacimiento</th><th>pais</th><th>sexo</th><th>imagen</th><th>mensaje</th><th></th></tr>
+</thead>
+<tbody>
+<tr><td>Elvis Miguel</td><td></td><td>04/03/1996</td><td>Colombia</td><td>masculino</td><td>naranja.jfif</td><td>El apellido es requerido</td><td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></td></tr>
+<tr><td>Elvis Miguel</td><td>.</td><td>04/03/1996</td><td>Colombia</td><td>masculino</td><td>naranja.jfif</td><td>El apellido debe ser solo letras</td><td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></td></tr>
+<tr><td>Elvis Miguel</td><td>Miele.s Guarin</td><td>04/03/1996</td><td>Colombia</td><td>masculino</td><td>naranja.jfif</td><td>El apellido debe ser solo letras</td><td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></td></tr>
+</tbody>
+</table></div>
+</p>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="scenario-docs card" id="6a3ebe55a2d173870c6633069d8d869a55749ab06c7c4acc3f97b86a09672c73">
+                                                    <div class="scenario-docs card-header failure" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                El usuario Elvis desea actualizar la informaciòn sin el campo Fecha de nacimiento
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <i class='fa fa-times-circle failure-icon ' title='FAILURE'></i>
+                                                            </span>
+                                                        </div>
+                                                        <div class="scenario-report-badges">
+                                                                <span class="scenario-report-badge" style="float:right;"><a href='3ac5e1375a168b2d2352b4463582da485387bf8e4e437572d051d0b38b5cfaf2.html' class='badge more-details'>Details</a></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p><p>Dado que el usuario se encuentra en la pantalla de Información Personal y digita los datos</p>
+<table>
+<thead>
+<tr><th>nombre</th><th>apellido</th><th>fechaNacimiento</th><th>pais</th><th>sexo</th><th>imagen</th></tr>
+</thead>
+<tbody>
+<tr><td>{nombre}</td><td>{apellido}</td><td>{fechaNacimiento}</td><td>{pais}</td><td>{sexo}</td><td>{imagen}</td></tr>
+</tbody>
+</table>
+</p>
+                                                            <p>Entonces el deberia ver en el campo de fecha de nacimiento un mensaje {mensaje}</p>
+                                                        <div class="examples">
+                                                            <p><p>Ejemplos: Datos</p>
+<div class='example-table-in-scenario'><table>
+<thead>
+<tr><th>nombre</th><th>apellido</th><th>fechaNacimiento</th><th>pais</th><th>sexo</th><th>imagen</th><th>mensaje</th><th></th></tr>
+</thead>
+<tbody>
+<tr><td>Elvis Miguel</td><td>Mieles Guarin</td><td></td><td>Colombia</td><td>masculino</td><td>naranja.jfif</td><td>La fecha de nacimiento es requerida</td><td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></td></tr>
+<tr><td>Elvis Miguel</td><td>Mieles Guarin</td><td>4-Marzo-1996</td><td>Colombia</td><td>masculino</td><td>naranja.jfif</td><td>La fecha debe tener el formato dd/mm/yyyy</td><td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></td></tr>
+<tr><td>Elvis Miguel</td><td>Mieles Guarin</td><td>04/Marzo/1996</td><td>Colombia</td><td>masculino</td><td>naranja.jfif</td><td>La fecha debe tener el formato dd/mm/yyyy</td><td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></td></tr>
+<tr><td>Elvis Miguel</td><td>Mieles Guarin</td><td>04/Marzo/2021</td><td>Colombia</td><td>masculino</td><td>naranja.jfif</td><td>La fecha incorrecta</td><td><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i></td></tr>
+</tbody>
+</table></div>
+</p>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="results" class="tab-pane fade">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+
+                                            <div style="width:300px;" class="chart-container automated-and-manual-results">
+                                                <div class="ct-chart ct-square"></div>
+                                            </div>
+                                            <script>
+
+                                                var labels = ['77%', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '23%', ' ', ' ', ' ', ' ', ' '];
+                                                // Our series array that contains series objects or in this case series data arrays
+
+                                                var series = [{meta: 'Passing tests (automated)', value: 10}, {meta: 'Passing tests (manual)', value: 0}, {meta: 'Pending tests (automated)', value: 0}, {meta: 'Pending tests (manual)', value: 0}, {meta: 'Ignored tests (automated)', value: 0}, {meta: 'Ignored tests (manual)', value: 0}, {meta: 'Skipped tests (automated)', value: 0}, {meta: 'Skipped tests (manual)', value: 0}, {meta: 'Failing tests (automated)', value: 3}, {meta: 'Failing tests (manual)', value: 0}, {meta: 'Broken tests (automated)', value: 0}, {meta: 'Broken tests (manual)', value: 0}, {meta: 'Compromised tests (automated)', value: 0}, {meta: 'Compromised tests (manual)', value: 0}];
+
+                                                // As options we currently only set a static size of 300x200 px. We can also omit this and use aspect ratio containers
+                                                // as you saw in the previous example
+                                                var options = {
+                                                    width: 350,
+                                                    height: 300
+                                                };
+
+                                                $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+                                                    new Chartist.Pie('.ct-chart', {
+                                                        series: series,
+                                                        labels: labels,
+                                                    }, {
+                                                        donut: true,
+                                                        donutWidth: 60,
+                                                        donutSolid: true,
+                                                        startAngle: 270,
+                                                        showLabel: true
+                                                    }, options);
+                                                });
+
+                                            </script>
+                                        </div>
+                                        <div class="col-sm-8">
+
+                                        <table class="table">
+                                            <thead>
+                                            <tr>
+                                                <th scope="col">Scenario Results (including rows of test data)</th>
+                                                <th scope="col" colspan="2" class="automated-stats">
+                                                    Automated
+                                                </th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                                    <td class="aggregate-result-count">
+                                                                        <a href="2b2b363e17cf7ba9f9390895a5087d0133f382ff6fb6007a6b339f0f104a83c3.html"><i
+                                                                                class='fa fa-check-circle-o success-icon'></i>&nbsp;Passing</a>
+                                                                    </td>
+                                                <td class="automated-stats">10</td>
+                                                <td class="automated-stats">77%</td>
+                                            </tr>
+                                            <tr>
+                                                                    <td class="aggregate-result-count"><i
+                                                                            class='fa fa-stop-circle-o pending-icon'></i>&nbsp;Pending
+                                                                    </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                            </tr>
+                                            <tr>
+                                                                <td class="aggregate-result-count"><i
+                                                                        class='fa fa-ban ignored-icon'></i>&nbsp;Ignored
+                                                                </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                            </tr>
+                                            <tr>
+                                                                <td class="aggregate-result-count"><i
+                                                                        class='fa fa-fast-forward skip-icon'></i>&nbsp;Skipped
+                                                                </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                            </tr>
+                                            <tr>
+                                                                    <td colspan="3"><a href="5214f3e0c931019dae240e22b0f3d029074fc207da1002bed23e7e7bc00f4c76.html"><i
+                                                                            class='fa fa-times failure-icon'></i>&nbsp;<em>Unsuccessful</em></a>
+                                                                    </td>
+                                            </tr>
+
+                                            <tr>
+                                                                    <td class="aggregate-result-count indented-error-category">
+                                                                        <a href="8ebf3e140fa79c9ef6285ed3b2a4e4f303b0648a7e8b5664ac117e5acb10d787.html"><i
+                                                                                class='fa fa-times-circle failure-icon'></i>&nbsp;Failed</a>
+                                                                    </td>
+                                                <td class="automated-stats">3</td>
+                                                <td class="automated-stats">23%</td>
+                                            <tr>
+                                                                <td class="aggregate-result-count indented-error-category">
+                                                                    <i
+                                                                            class='fa fa-exclamation-triangle error-icon'></i>&nbsp;Broken
+                                                                </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                            <tr>
+                                                                <td class="aggregate-result-count indented-error-category">
+                                                                    <i
+                                                                            class='fa fa-chain-broken compromised-icon'></i>&nbsp;Compromised
+                                                                </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                            </tr>
+                                            <tr class="summary-stats">
+                                                <td class="aggregate-result-count">Total</td>
+                                                <td class="automated-stats">13</td>
+                                                <td class="automated-stats"></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    </div>
+
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <table class="table">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>Execution Time</th>
+                                                        <th>Clock Time</th>
+                                                        <th>Fastest Test</th>
+                                                        <th>Slowest Test</th>
+                                                        <th>Average Execution Time</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td> 5m 54s</td>
+                                                        <td> 5m 33s</td>
+                                                        <td>45s</td>
+                                                        <td> 1m 41s</td>
+                                                        <td> 1m 10s</td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <h3><i class="fas fa-cogs"></i> Automated Tests</h3>
+
+                                            <table class="scenario-result-table table" id="scenario-results">
+                                                <thead>
+                                                <tr>
+                                                    <th class="test-name-column">Scenario</th>
+                                                    <th>Steps</th>
+                                                    <th>Start Time</th>
+                                                    <th>Duration</th>
+                                                    <th>Result</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="4d6e0c6d3cb800242c804ae640caf68e7bc500387cef1d07a52441c9f12df552.html">: El usuario Elvis desea actualizar lo informaciòn personal correctamente</a>
+                                                               (1 example)
+                                                    </td>
+                                                    <td>2</td>
+                                                    <td>08:23:45</td>
+                                                    <td>00:45</td>
+                                                    <td>
+                                                            <i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result FAILURE">
+                                                    <td>
+                                                            <a href="430ed441ac1b1728d30abe19c94d35b899be811e96be35f745c6074bf5efe721.html">El usuario Elvis desea actualizar la informaciòn sin la imagen</a>
+                                                               (2 examples)
+                                                    </td>
+                                                    <td>2</td>
+                                                    <td>08:24:41</td>
+                                                    <td>01:00</td>
+                                                    <td>
+                                                            <i class='fa fa-times-circle failure-icon ' title='FAILURE'></i> <span
+                                                                style="display:none">FAILURE</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="cc14bfc86caa09497d702b967bbf72e04d012a26873e5d1c43ecd1e82cd13492.html">El usuario Elvis desea actualizar la informaciòn sin el campo nombre</a>
+                                                               (3 examples)
+                                                    </td>
+                                                    <td>2</td>
+                                                    <td>08:26:40</td>
+                                                    <td>01:12</td>
+                                                    <td>
+                                                            <i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="a6863e5742bf29b0daa91a6d2847f6e78018a6cc4adb9b7fc60ad952263d322b.html">El usuario Elvis desea actualizar la informaciòn sin el campo Apellido</a>
+                                                               (3 examples)
+                                                    </td>
+                                                    <td>2</td>
+                                                    <td>08:27:58</td>
+                                                    <td>01:14</td>
+                                                    <td>
+                                                            <i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result FAILURE">
+                                                    <td>
+                                                            <a href="3ac5e1375a168b2d2352b4463582da485387bf8e4e437572d051d0b38b5cfaf2.html">El usuario Elvis desea actualizar la informaciòn sin el campo Fecha de nacimiento</a>
+                                                               (4 examples)
+                                                    </td>
+                                                    <td>2</td>
+                                                    <td>08:29:19</td>
+                                                    <td>01:41</td>
+                                                    <td>
+                                                            <i class='fa fa-times-circle failure-icon ' title='FAILURE'></i> <span
+                                                                style="display:none">FAILURE</span>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <h3><i class="fas fa-edit"></i> Manual Tests</h3>
+
+                                                No manual tests were recorded
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <span class="version">Serenity BDD version 2.0.12</span>
+                    </div>
+                </div>
+            </div>
+</body>
+</html>

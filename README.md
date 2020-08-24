@@ -33,7 +33,9 @@ La prueba se puede ejecutar por medio del package runners, la cual esta ubicada 
        
        mvn clean verify
  
-Para observar las evidencias de las pruebas debemos ejecutar el script y ingresar a la ruta target\site\serenity , allí buscamos  archivo Index que encontramos en la carpeta.
+Reporte  📋
+ 
+Para observar las evidencias de las pruebas debemos ingresar a la ruta Reporte\site\serenity y buscar  archivo Index que se encuentra en la carpeta.
 
 Analizar el codigo con Sonarqube ⌨️️
 

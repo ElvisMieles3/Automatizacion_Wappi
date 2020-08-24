@@ -6,6 +6,7 @@ import com.certificacion.automatizacion.wappi.questions.pantallaloguin.Contrasen
 import com.certificacion.automatizacion.wappi.questions.pantallaloguin.UsuarioIncorrecto;
 import com.certificacion.automatizacion.wappi.tasks.AbrirNavegador;
 import com.certificacion.automatizacion.wappi.tasks.IngresarDatosLogin;
+import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -62,5 +63,10 @@ public class LoginStepDefinition {
         theActorInTheSpotlight().should(seeThat(ContrasenaIncorrecta.mensaje(),
                 org.hamcrest.Matchers.is(contrasenaIncorrecto)));
 
+    }
+
+    @After
+    public void cerrarEscenario() {
+      OnStage.drawTheCurtain();
     }
 }

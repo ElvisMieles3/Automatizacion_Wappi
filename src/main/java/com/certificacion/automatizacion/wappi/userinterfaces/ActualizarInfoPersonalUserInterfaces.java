@@ -45,4 +45,21 @@ public class ActualizarInfoPersonalUserInterfaces {
             the("Selecciona la imagen que desea cargar").
             locatedBy("//*[text() = 'Tu información se guardó correctamente']");
 
+
+    public static final  Target MENSAJE_FALTANTE_IMAGEN = Target.
+            the("Muestra el mensaje de error, en el campo imagen").
+            located(By.id("e-image"));
+
+    public static final  Target MENSAJE_FALTANTE_NOMBRE = Target.
+            the("Muestra el mensaje de error, en el campo nombre").
+            located(By.id("e-name"));
+
+    public static final  Target MENSAJE_FALTANTE_APELLIDO = Target.
+            the("Muestra el mensaje de error, en el campo apellido").
+            located(By.id("e-lastName"));
+
+    public static final  Target MENSAJE_FALTANTE_NACIMIENTO = Target.
+            the("Muestra el mensaje de error, en el campo fecha de nacimiento").
+            located(By.id("e-bornDate"));
+
 }

@@ -46,8 +46,8 @@ public class DatosInfoPersonal {
     }
 
     public String getUrlImagen() {
-        String absolutePath = Paths.get(".").toAbsolutePath().normalize().toString();
-        String urlImagen = absolutePath + "\\assets\\" + this.imagen;
+        String absolutePath = Paths.get(System.getProperty("user.dir")).normalize().toString();
+        String urlImagen = Paths.get(absolutePath, "assets", this.imagen).toString();
         return urlImagen;
     }
 }

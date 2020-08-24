@@ -44,6 +44,8 @@ Característica: Solicitar una orden
       | nombreProducto |
       | Jamón Premium  |
       | Jamón Premium  |
-    Entonces en la página de cupones debe mostrar el siguiente mensaje No se encontraron registros
+      | Jamón Premium  |
+    Entonces en la campo cupòn debe mostrar el mensaje Cupón inválido
+   
 
 

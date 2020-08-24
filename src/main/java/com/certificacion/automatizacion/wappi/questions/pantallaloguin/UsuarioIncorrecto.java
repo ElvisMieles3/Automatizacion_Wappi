@@ -16,8 +16,8 @@ public class UsuarioIncorrecto implements Question<String> {
                 WebElementStateMatchers.isVisible()));
         return Text.of(LoginUserInterface.MENSAJE_USUARIO_INCORRECTO).viewedBy(actor).asString();
     }
-    public static Login mensaje(){
+    public static UsuarioIncorrecto mensaje(){
 
-        return new Login();
+        return new UsuarioIncorrecto();
     }
 }

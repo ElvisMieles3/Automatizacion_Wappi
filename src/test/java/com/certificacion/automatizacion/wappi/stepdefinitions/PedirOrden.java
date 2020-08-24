@@ -2,6 +2,7 @@ package com.certificacion.automatizacion.wappi.stepdefinitions;
 
 import com.certificacion.automatizacion.wappi.models.OrdenPedido;
 import com.certificacion.automatizacion.wappi.models.Paginas;
+import com.certificacion.automatizacion.wappi.questions.CuponInvalido;
 import com.certificacion.automatizacion.wappi.questions.Cupones;
 import com.certificacion.automatizacion.wappi.questions.ObservarMisPedidos;
 import com.certificacion.automatizacion.wappi.tasks.PedirDosProductosConElMismoCupon;
@@ -71,6 +72,14 @@ public class PedirOrden {
     public void seleccionatresproductoconelmismocupon(List<OrdenPedido> ordenPedidos) {
         OnStage.theActorInTheSpotlight().attemptsTo(PedirTresProductosConElMismoCupon.
                 conDatos(ordenPedidos.get(0)));
-
     }
+
+    @Entonces("^en la campo cupòn debe mostrar el mensaje (.*)$")
+    public void debeVerElmensajeenelcampocupon(String mensajeCuponinvalido) {
+        theActorInTheSpotlight().should(seeThat(CuponInvalido.mensaje(),
+                org.hamcrest.Matchers.is(mensajeCuponinvalido)));
+    }
+
+
+
 }

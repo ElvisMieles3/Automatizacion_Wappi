@@ -20,7 +20,7 @@ Feature: Login
     When el ingresa las credenciales para ingresar
       | usuario   | contrasena   |
       | <usuario> | <contrasena> |
-    Then el usuario debe ver el mensaje <mensaje> en el campo usuario
+    Then el usuario debe ver en el campo usuario el  mensaje <mensaje>
 
     Examples: Datos
       | usuario | contrasena | mensaje                                          |
@@ -33,7 +33,7 @@ Feature: Login
     When el ingresa las credenciales para ingresar
       | usuario   | contrasena   |
       | <usuario> | <contrasena> |
-    Then el usuario debe ver el mensaje <mensaje> en el campo contraseña
+    Then el usuario debe ver en el campo contraseña el  mensaje <mensaje>
 
     Examples: Datos
       | usuario     | contrasena | mensaje                                             |

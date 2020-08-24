@@ -50,14 +50,14 @@ public class LoginStepDefinition {
                 org.hamcrest.Matchers.is(login)));
     }
 
-    @Then("^el usuario debe ver el mensaje (.*) en el campo usuario$")
+    @Then("^el usuario debe ver en el campo usuario el  mensaje (.*)$")
     public void elUsuarioDebeVerElmensaje(String usuarioIncorrecto) {
         theActorInTheSpotlight().should(seeThat(UsuarioIncorrecto.mensaje(),
                 org.hamcrest.Matchers.is(usuarioIncorrecto)));
 
     }
 
-    @Then("^el usuario debe ver el mensaje (.*) en el campo contraseña$")
+    @Then("^el usuario debe ver en el campo contraseña el  mensaje (.*)$")
     public void elUsuarioDebeVerElmensajeContrasena(String contrasenaIncorrecto) {
         theActorInTheSpotlight().should(seeThat(ContrasenaIncorrecta.mensaje(),
                 org.hamcrest.Matchers.is(contrasenaIncorrecto)));

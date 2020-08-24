@@ -17,5 +17,8 @@ public class PedirOrdenUserInterface {
             .locatedBy("//*[text() = 'Tu pedido ha sido confirmado, te mantendremos informado ante nuevas novedades']");
 
 
+    public static final Target MENSAJE_ERROR_CUPON = Target.
+            the("Confirma el producto")
+            .located(By.id("e-coupon"));
 
 }

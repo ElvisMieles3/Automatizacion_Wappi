@@ -15,8 +15,8 @@ public class ContrasenaIncorrecta implements Question<String> {
                 WebElementStateMatchers.isVisible()));
         return Text.of(LoginUserInterface.MENSAJE_CONTRASEÑA_INCORRECTO).viewedBy(actor).asString();
     }
-    public static Login mensaje(){
+    public static ContrasenaIncorrecta mensaje(){
 
-        return new Login();
+        return new ContrasenaIncorrecta();
     }
 }

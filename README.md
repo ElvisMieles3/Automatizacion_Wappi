@@ -32,8 +32,6 @@ Para la ejecución del proyecto debe tener presente que las variables de entorno
 La prueba se puede ejecutar por medio del package runners, la cual esta ubicada en src\test\java\co\certificacion\automatizacion\runner o por medio de la consola del proyecto con el comando 
        
        mvn clean verify
-
-En el campo imagen  del archivo actualizar_informacion_personal  que esta ubicado en src\test\resources\features\actualizar_informacion_personal.feature se debe cambiar la ruta por la ubicación de la imagen que se desea adjuntar; La ruta debe ser adsoluta. 
  
 Para observar las evidencias de las pruebas debemos ejecutar el script y ingresar a la ruta target\site\serenity , allí buscamos  archivo Index que encontramos en la carpeta.
 
